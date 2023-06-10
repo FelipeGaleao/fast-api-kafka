@@ -6,27 +6,27 @@ labels: bug, triagem
 assignees: ''
 ---
 
-# Report de Bugs :bug
+# :bug: Report de Bugs
 
 Olá! Encontramos um bug no nosso software e gostaríamos de reportá-lo para que possa ser corrigido o mais rápido possível.
 
-# Descrição do Bug :mag_right
+#  :mag_right: Descrição do Bug
 
 [Descreva aqui o bug encontrado, incluindo as etapas para reproduzi-lo.]
 
-# Comportamento Esperado :thought_balloon
+# :thought_balloon: Comportamento Esperado
 
 [Descreva aqui o comportamento esperado.]
 
-# Comportamento Atual :thought_balloon
+# :thought_balloon: Comportamento Atual
 
 [Descreva aqui o comportamento atual que está diferente do esperado.]
 
-# Screenshots :camera
+# :camera: Screenshots
 
 [Se aplicável, insira screenshots do bug.]
 
-# Informações Adicionais :information_source
+# :information_source: Informações Adicionais
 
 - Versão do software: [Insira a versão do software em que o bug foi encontrado]
 - Agradecemos pela atenção e estamos à disposição para qualquer esclarecimento adicional.

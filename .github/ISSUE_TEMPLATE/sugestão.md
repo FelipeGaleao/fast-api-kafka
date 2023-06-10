@@ -6,26 +6,26 @@ labels: bug, triagem
 assignees: ''
 ---
 
-# Sugestão :bulb
+# :bulb: Sugestão 
 
 Olá! Gostaríamos de compartilhar uma sugestão para o nosso software.
 
-## Descrição da Sugestão :thought_balloon
+## :thought_balloon: Descrição da Sugestão
 
 [Descreva aqui a sua sugestão em detalhes.]
 
-## Benefícios :heavy_check_mark
+## :heavy_check_mark: Benefícios 
 
 [Insira aqui os benefícios que essa sugestão pode trazer para o software]
 [Insira aqui outros benefícios que você acredita que sejam relevantes]
 Implementação :wrench:
 [Descreva aqui como você imagina que essa sugestão possa ser implementada, incluindo as etapas necessárias.]
 
-## Impactos Adicionais :warning
+## :warning: Impactos Adicionais
 
 [Se houver algum impacto adicional que essa sugestão possa ter no software, descreva aqui.]
 
-## Informações Adicionais :information_source
+## :information_source: Informações Adicionais
 
 - Versão do software: [Insira a versão do software em que o bug foi encontrado]
 Agradecemos pela atenção e esperamos por sua avaliação dessa sugestão!
