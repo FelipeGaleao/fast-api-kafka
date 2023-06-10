@@ -1,6 +1,6 @@
 ---
-name: Criar uma nova sugestão
-about: Crie um reporte de sugestão para nos ajudar a melhorar
+name: Criar uma nova discussão
+about: Crie uma issue para iniciar uma discussão
 title: '[DISCUSSÃO]: '
 labels: ["discussao", "triagem"]
 body:
