@@ -1,0 +1,30 @@
+version: "3.7"
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  consumer:
+    build:
+      context: ./consumer
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    depends_on:
+      - kafka
+    networks:
+      - app-tier
+  producer:
+    build:
+      context: ./producer
+    expose:
+      - 8000
+    depends_on:
+      - kafka
+    networks:
+      - app-tier
+  kafka:
+    image: 'bitnami/kafka:latest'
+    networks:
+      - app-tier
