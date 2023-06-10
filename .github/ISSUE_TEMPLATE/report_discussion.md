@@ -1,3 +1,4 @@
+---
 name: Criar uma nova sugestão
 about: Crie um reporte de sugestão para nos ajudar a melhorar
 title: '[DISCUSSÃO]: '
@@ -40,3 +41,4 @@ body:
               name: 'Eu concordo que não há nenhuma sugestão aberta com o mesmo problema'
               description: 'Marque essa caixa para confirmar que não há nenhuma sugestão aberta com o mesmo problema'
               required: true
+---

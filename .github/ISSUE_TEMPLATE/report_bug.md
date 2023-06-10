@@ -1,3 +1,4 @@
+---
 name: Reporte de Bug
 about: Crie um reporte de bug para nos ajudar a melhorar
 title: '[BUG]: '
@@ -57,3 +58,4 @@ body:
               name: 'Eu concordo que não há nenhuma issue aberta com o mesmo problema'
               description: 'Marque essa caixa para confirmar que não há nenhuma issue aberta com o mesmo problema'
               required: true
+---
