@@ -1,12 +1,13 @@
 from kafka import KafkaConsumer
+from json import loads
 
-consumer = KafkaConsumer('my-topic',
-                         group_id='my-group',
-                         bootstrap_servers=['kafka:9092'])
+consumer = KafkaConsumer(
+   'message',
+    auto_offset_reset='earliest',
+    enable_auto_commit=True,
+    group_id='my-group-0001',
+    value_deserializer=lambda m: loads(m.decode('utf-8')),
+    bootstrap_servers=['localhost:9094'])
 
-for message in consumer:
-    print ("%s:%d:%d: key=%s value=%s" % (message.topic, message.partition,
-                                          message.offset, message.key,
-                                          message.value))
-
-
+for m in consumer:
+    print(m.value)

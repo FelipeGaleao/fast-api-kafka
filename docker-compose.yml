@@ -1,10 +1,16 @@
 version: "3.7"
 
-networks:
-  app-tier:
-    driver: bridge
-
 services:
+
+  kafdrop: 
+    image: obsidiandynamics/kafdrop
+    ports:
+      - "9000:9000"
+    environment:
+      KAFKA_BROKERCONNECT: kafka:9092
+      JVM_OPTS: "-Xms32M -Xmx64M"
+    depends_on:
+      - kafka
   consumer:
     build:
       context: ./consumer
@@ -13,18 +19,49 @@ services:
       - "9300:9300"
     depends_on:
       - kafka
-    networks:
-      - app-tier
+    volumes:
+      - .:/app
+
   producer:
     build:
       context: ./producer
     expose:
       - 8000
+    ports:
+      - "8000:80"
     depends_on:
       - kafka
-    networks:
-      - app-tier
+    volumes:
+      - .:/app
+
+  zookeeper:
+      image: 'bitnami/zookeeper:latest'
+      ports:
+        - '2181:2181'
+      environment:
+        - ALLOW_ANONYMOUS_LOGIN=yes
   kafka:
-    image: 'bitnami/kafka:latest'
-    networks:
-      - app-tier
+    image: 'bitnami/kafka:3.4.1'
+    expose: 
+      - '9094'
+      - '9092'
+      - '29092'
+    ports:
+      - "9094:9094"
+      - '9092:9092'
+      - '29092:29092'
+    environment:
+      - KAFKA_ENABLE_KRAFT=yes
+      - BITNAMI_DEBUG=yes
+      - KAFKA_CFG_BROKER_ID=1
+      - KAFKA_CFG_NODE_ID=1
+      - KAFKA_CFG_PROCESS_ROLES=broker,controller
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@:9093
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
+      - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1
