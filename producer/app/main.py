@@ -12,5 +12,8 @@ producer = KafkaProducer(bootstrap_servers=['kafka:9092'])
 
 @app.post("/send")
 async def send_notification(message: Message):
-    producer.send('message', key=b'foo', value=message.text.encode())
-    return {"message": "Notification sent in the background"}
+    try:
+        producer.send('message', value=message.text.encode())
+        return {"message": "Notification sent in the background"}
+    except e: 
+        return {"message": "Notification failed to send", "error": e}
