@@ -21,6 +21,11 @@ class ComprovanteDeMatricula(BaseModel):
     data_hora: str
     localizacao: str
 
+class CadastroMatricula(BaseModel):
+    id: str
+    id_aluno: str
+    data_hora: str
+    curso: str
 
 app = FastAPI()
 producer = KafkaProducer(bootstrap_servers=["kafka:9092"])
@@ -83,3 +88,14 @@ async def comprovante_de_matricula(comprovante_matricula: ComprovanteDeMatricula
         return {"message": "Comprovante de matricula enviado com sucesso"}
     except e:
         return {"message": "Falha ao enviar comprovante de matricula", "error": e}
+
+
+@app.post("/cadastro_matricula")
+async def cadastro_matricula(cadastro_matricula: CadastroMatricula):
+    try:
+        producer.send(
+            "cadastro_matricula", value=cadastro_matricula.json().encode()
+        )
+        return {"message": "Cadastro de matricula enviado com sucesso"}
+    except e:
+        return {"message": "Falha ao enviar cadastro de matricula", "error": e}
