@@ -3,9 +3,7 @@ Visando adotar um modelo de ramificação que seja simples e eficiente, o modelo
 
 ## Branches (Ramos)
 
-O modelo de ramificação Github Flow trabalha basicamente com a branch main de longa duração e com branches de trabalho, onde novas features e correções são desenvolvidas constantemente.
-
-Um ponto extremamente importante neste modelo é a revisão de código feita através de pull requests.
+O modelo de ramificação Github Flow trabalha basicamente com a branch main de longa duração e com branches de trabalho, que traduzem funcionalidades e correções novas.
 
 ## Review (Revisão)
 
