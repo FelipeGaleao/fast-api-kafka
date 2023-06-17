@@ -13,8 +13,8 @@ class HorarioPonto(BaseModel):
     data_hora: str
     tipo: str
     localizacao: str
-    setor: str
-
+    setor_func: str
+    dep_func: str
 
 class ComprovanteDeMatricula(BaseModel):
     id: str
