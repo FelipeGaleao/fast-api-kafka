@@ -9,10 +9,14 @@ class Message(BaseModel):
 
 class HorarioPonto(BaseModel):
     id: str
-    id_funcionario: str
+    matricula_funcionario: str
     data_hora: str
     tipo: str
-    localizacao: str
+    local: str
+    dep_funcionario: str
+    setor_funcionario: str
+    unidade_funcionario: str
+    empresa_funcionario: str
 
 
 class ComprovanteDeMatricula(BaseModel):
