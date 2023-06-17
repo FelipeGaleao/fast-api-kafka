@@ -18,7 +18,6 @@ class HorarioPonto(BaseModel):
     unidade_funcionario: str
     empresa_funcionario: str
 
-
 class ComprovanteDeMatricula(BaseModel):
     id: str
     id_aluno: str
