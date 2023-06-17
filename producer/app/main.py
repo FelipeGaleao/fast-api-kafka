@@ -9,7 +9,7 @@ class Message(BaseModel):
 
 class HorarioPonto(BaseModel):
     id: str
-    id_funcionario: str
+    id_func: str
     data_hora: str
     tipo: str
     local: str
