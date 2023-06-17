@@ -20,6 +20,7 @@ class ComprovanteDeMatricula(BaseModel):
     id_aluno: str
     data_hora: str
     localizacao: str
+    codigo_aluno: str
 
 class CadastroMatricula(BaseModel):
     id: str
