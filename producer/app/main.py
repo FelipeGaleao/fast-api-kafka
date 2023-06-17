@@ -15,6 +15,8 @@ class HorarioPonto(BaseModel):
     localizacao: str
     setor_funcionario: str
     unidade_funcionario: str
+    emp_func: str
+
 
 
 class ComprovanteDeMatricula(BaseModel):
