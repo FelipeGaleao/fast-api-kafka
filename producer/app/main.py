@@ -31,6 +31,14 @@ class CadastroMatricula(BaseModel):
     data_hora: str
     curso: str
 
+class RequisicaoAcademica(BaseModel):
+    id: str
+    tipo_requisicao: id
+    data: str
+    numero_matricula: str
+    estudante: str
+    descricao: str
+
 app = FastAPI()
 producer = KafkaProducer(bootstrap_servers=["kafka:9092"])
 
@@ -103,3 +111,13 @@ async def cadastro_matricula(cadastro_matricula: CadastroMatricula):
         return {"message": "Cadastro de matricula enviado com sucesso"}
     except e:
         return {"message": "Falha ao enviar cadastro de matricula", "error": e}
+    
+@app.post("/requisicao_academica")
+async def requisicao_academica(requisicao_academica: RequisicaoAcademica):
+    try:
+        producer.send(
+            "requisicao_academica", value=requisicao_academica.json().encode()
+        )
+        return {"message": "Requisição acadêmica enviada com sucesso."}
+    except e:
+        return {"message": "Falha ao enviar a requisição acadêmica", "error": e}
