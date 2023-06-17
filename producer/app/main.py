@@ -12,7 +12,7 @@ class HorarioPonto(BaseModel):
     id_funcionario: str
     data_hora: str
     tipo: str
-    localizacao: str
+    local: str
     dep_funcionario: str
     setor_funcionario: str
     unidade_funcionario: str
