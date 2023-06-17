@@ -13,6 +13,7 @@ class HorarioPonto(BaseModel):
     data_hora: str
     tipo: str
     localizacao: str
+    curso: str
 
 
 class ComprovanteDeMatricula(BaseModel):
