@@ -17,3 +17,11 @@ Escolha um tipo apropriado para o seu commit, indicando o propósito das altera�
 - docs: Alterações relacionadas à documentação.
 - style: Alterações de formatação, como espaços em branco, indentação, etc.
 - refactor: Refatoração do código sem alterar o comportamento.
+
+# Exemplos de uso:
+- feat: adiconada funcionalidade de autenticacao de usuario
+- fix: corrigida a validacao do login
+- docs: atualizada as instrucoes de instalacao do arquivo README
+- refactor: refatorada logica de processamento de carrinho
+
+**OBS:** Evitar a acentuação nos commits, por questões de compatibilidade e interoperabilidade entre diferentes sistemas e plataformas de desenvolvimento.
