@@ -1,6 +1,6 @@
 ---
 name: Discussões
-about: Suggest an idea for this project
+about: Sugere uma ideia ao projeto
 title: "[DISCUSSÃO]"
 labels: discussão, triagem
 assignees: ''

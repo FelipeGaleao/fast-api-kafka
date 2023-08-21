@@ -1,8 +1,8 @@
 ---
-name: Sugestão
-about: Crie uma sugestão para melhorias no software
-title: "[SUGESTÃO]"
-labels: bug, triagem
+name: Funcionalidade
+about: Crie uma funcionalidade para ser implementada no software
+title: "[FEATURE]"
+labels: funcionalidade, triagem
 assignees: ''
 ---
 
@@ -17,7 +17,6 @@ Olá! Gostaríamos de compartilhar uma sugestão para o nosso software.
 ## :heavy_check_mark: Benefícios 
 
 [Insira aqui os benefícios que essa sugestão pode trazer para o software]
-[Insira aqui outros benefícios que você acredita que sejam relevantes]
 
 ## Implementação :wrench:
 [Descreva aqui como você imagina que essa sugestão possa ser implementada, incluindo as etapas necessárias.]
